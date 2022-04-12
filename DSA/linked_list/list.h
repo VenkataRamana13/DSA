@@ -1,19 +1,19 @@
-#ifndef _LIST_H_
-#define _LIST_H_
+#ifndef __LIST_H_
+#define __LIST_H_
 
-//3 basic operations of linked lists : searching, inserting, deletion
+typedef struct node{
+    int value;
+    struct node *next;
+} node;
 
-typedef struct list{ 
-    int value; 
-    struct list *next;
-} list; 
+struct node *insert (struct node *list, int n); 
 
-list *search_list(list *l, int); 
+struct node *read_numbers(struct node *list);
 
-void insert_list(list **l, int); 
+void display_numbers(struct node *list); 
 
-list *item_ahead(list *l, list *l); 
+struct node *search_node(struct node *list, int n); 
 
-void delete_list(list **l, list **l); 
+struct node *delete_value(struct node *list, int n); 
 
 #endif

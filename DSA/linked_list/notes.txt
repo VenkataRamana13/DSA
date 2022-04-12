@@ -1,0 +1,12 @@
+structure and typedef
+ 
+struct part{
+
+}; 
+struct part part1 part2; 
+
+typedef struct{
+
+}Part; 
+
+Part part1 part2; 
