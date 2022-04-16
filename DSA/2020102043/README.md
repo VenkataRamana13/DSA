@@ -1,4 +1,4 @@
-##Compiling and executing 
+#Compiling and executing 
 compile as 
 '''
 make all
