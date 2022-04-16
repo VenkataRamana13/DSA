@@ -28,7 +28,6 @@ struct node *read_numbers(struct node *list){
 
 void display_numbers(struct node *list){
     node *p; 
-    p = malloc(sizeof(node)); 
     if(p == NULL){
         printf ("malloc failed in allocation\n"); 
         exit(EXIT_FAILURE); 
