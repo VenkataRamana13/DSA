@@ -1,5 +1,9 @@
 compile instructions are given in makefile
-compiling via makefile gives 3 executables 
+
+compile by "make all"
+
+compiling via makefile gives 3 executables
+
 These have to be executed as ./*
 
 2nd question has I/O commands the same as in the test cases given
