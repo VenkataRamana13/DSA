@@ -1,0 +1,1 @@
+data structures -> contiguous or linked 
