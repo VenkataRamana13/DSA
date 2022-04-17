@@ -1,11 +1,4 @@
-compile as
-
-'
-gcc -o stack stack.c main.c
-'
-
-and run 
-
-'
-./stack
-'
+> *compile as*
+> `gcc -o stack stack.c main.c`
+> *and run*
+> `./stack`
