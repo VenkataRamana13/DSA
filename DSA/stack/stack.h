@@ -6,8 +6,10 @@ typedef struct node{
     struct node *next; 
 } node; 
 
-void push(struct node **stack, int n); 
+node *push(node *stack, int n); 
 
-void pop(struct node **stack); 
+node *pop(node *stack); 
+
+void print(node *stack); 
 
 #endif

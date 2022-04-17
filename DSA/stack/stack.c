@@ -2,18 +2,25 @@
 #include "stack.h"
 #include <stdlib.h>
 
-void push(struct node **stack, int n){
-    node *p; 
-    p = malloc(sizeof(node)); 
+node *push(node *stack, int n){
+    node *p = malloc(sizeof(node)); 
     
     p -> value = n; 
-    p -> next = *stack; 
-    *stack = p;  
+    p -> next = stack; 
+    return p;  
 }
 
-void pop(struct node **stack){
-    if (*stack == NULL){
-        printf ("already empty\n"); return; 
+node *pop(node *stack){
+    if (stack == NULL){
+        printf ("already empty\n"); exit(0); 
     }
-    *stack = (*stack) -> next; 
+    return stack -> next; 
+}
+
+void print(node *stack){
+    node *p = NULL; 
+    for(p = stack; p -> next != NULL; p = p -> next){
+        printf("%d ", p -> value); 
+    }
+    printf("\n"); 
 }
