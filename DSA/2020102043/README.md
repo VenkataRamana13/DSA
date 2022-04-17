@@ -1,6 +1,8 @@
 compile instructions are given in makefile
 
-compile by "make all"
+compile by 
+
+'make all'
 
 compiling via makefile gives 3 executables
 
