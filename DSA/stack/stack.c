@@ -3,6 +3,13 @@
 #include <stdlib.h>
 
 node *push(node *stack, int n){
+    if (stack == NULL){
+        stack = malloc(sizeof(node)); 
+        stack -> value = n; 
+        stack -> next = NULL; 
+        return stack; 
+    }
+
     node *p = malloc(sizeof(node)); 
     
     p -> value = n; 
@@ -12,15 +19,46 @@ node *push(node *stack, int n){
 
 node *pop(node *stack){
     if (stack == NULL){
-        printf ("already empty\n"); exit(0); 
+        return NULL;  
     }
-    return stack -> next; 
+    if(stack -> next == NULL){
+        return NULL; 
+    }
+    node *tmp = stack -> next; 
+    free(stack); 
+    return tmp; 
 }
 
-void print(node *stack){
+/*void print(node *stack){
     node *p = NULL; 
     for(p = stack; p -> next != NULL; p = p -> next){
         printf("%d ", p -> value); 
     }
     printf("\n"); 
+}*/
+
+void top(node *stack){
+    if (stack == NULL){
+        printf("\n");
+        return;  
+    }
+    printf("%d\n", stack -> value); 
 }
+
+int size(node *stack){
+    node *p = NULL;
+    int i ; 
+    if (stack == NULL){
+        return 0; 
+    }
+    for (i = 0, p = stack; p -> next != NULL; i++, p = p -> next); 
+    return i + 1; 
+}
+
+int isEmpty(node *stack){
+    if (stack == NULL){
+        return 1;
+    }
+    return 0; 
+}
+

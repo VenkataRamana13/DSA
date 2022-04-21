@@ -10,6 +10,10 @@ node *push(node *stack, int n);
 
 node *pop(node *stack); 
 
-void print(node *stack); 
+void top(node *stack); 
+
+int size(node *stack); 
+
+int isEmpty(node *stack); 
 
 #endif
