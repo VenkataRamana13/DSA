@@ -14,9 +14,9 @@ node *pushFront(node *, int);
 
 node *pushBack(node *, int); 
 
-int front(node *); 
+void front(node *); 
 
-int back(node *); 
+void back(node *); 
 
 int isEmpty(node *); 
 
