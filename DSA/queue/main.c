@@ -6,7 +6,7 @@
 #define STR_LENGTH 50
 
 int main(){
-    node *p = malloc(sizeof(node));
+    node *p = NULL; 
     char str[STR_LENGTH];
 
     for (;;){
@@ -20,7 +20,7 @@ int main(){
             p = enqueue(p, i); 
         }
         else if (!strcmp(str, "front")){
-            printf("%d\n", front(p));
+            front(p); 
         }
         else if (!strcmp(str, "is_empty")) {
             printf("%d\n", isEmpty(p));
@@ -28,8 +28,11 @@ int main(){
         else if (!strcmp(str, "size")) {
             printf("%d\n", size(p));
         }
+        else if (!strcmp(str, "q") || !strcmp(str, "quit")){
+            exit(0); 
+        }
         else{
-            exit(0);
+            printf("Invalid command\n"); 
         }
     }
 }

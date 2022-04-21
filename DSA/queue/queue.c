@@ -3,13 +3,23 @@
 #include <stdlib.h>
 
 node *dequeue(node *p){
-    node *q = malloc(sizeof(node)); 
+    if (p == NULL || p -> next == NULL){
+        return NULL; 
+    }
+    node *q = NULL;   
     q = p; 
     p = p -> next; 
     free(q); 
+    return p; 
 }
  
 node *enqueue(node *p, int i){
+    if (p == NULL){
+        p = malloc(sizeof(node)); 
+        p -> value = i; 
+        p -> next = NULL; 
+        return p; 
+    }
     node *r = malloc(sizeof(node)); 
     r -> value = i; 
     node *q = NULL;
@@ -19,19 +29,16 @@ node *enqueue(node *p, int i){
     return p; 
 }
 
-int front(node *p){
+void front(node *p){
     if (p == NULL){
-        printf("empty\n"); 
-        return 0; 
+        printf("\n"); 
+        return; 
     }
-    return p -> value; 
+    printf("%d\n", p -> value); 
 }
 
 int isEmpty(node *p){
-    if(size(p) == 0){
-        return 1; 
-    }
-    if(p == NULL){
+    if(size(p) == 0 || p == NULL){
         return 1; 
     }
     return 0; 
@@ -44,5 +51,5 @@ int size(node *p){
         return 0; 
     }
     for (i = 0, q = p; q -> next != NULL; i++, q = q -> next); 
-    return i; 
+    return i + 1; 
 }
