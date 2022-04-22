@@ -18,10 +18,10 @@ int main(){
             p = popBack(p);
         }
         else if (!strcmp(str, "front")){
-            front(p); 
+            printf("%d\n", front(p)); 
         }
         else if (!strcmp(str, "back")){
-            back(p); 
+            printf("%d\n", back(p)); 
         }
         else if (!strcmp(str, "is_empty")) {
             printf("%d\n", isEmpty(p));
