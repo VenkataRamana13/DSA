@@ -1,7 +1,7 @@
 > *compile as*
 > 
-> `gcc -o list list.c main.c`
+> `make all`
 > 
 > *and run*
 > 
-> `./list`
+> `./linked_list`
