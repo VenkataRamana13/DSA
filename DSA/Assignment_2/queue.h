@@ -10,7 +10,7 @@ node *dequeue(node *);
 
 node *enqueue(node *, int); 
 
-void front(node *); 
+int front(node *); 
 
 int isEmpty(node *); 
 

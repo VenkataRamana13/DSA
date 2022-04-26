@@ -10,7 +10,7 @@ node *push(node *stack, int n);
 
 node *pop(node *stack); 
 
-void top(node *stack); 
+int top(node *stack); 
 
 int size(node *stack); 
 

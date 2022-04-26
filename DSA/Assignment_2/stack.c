@@ -37,12 +37,11 @@ node *pop(node *stack){
     printf("\n"); 
 }*/
 
-void top(node *stack){
+int top(node *stack){
     if (stack == NULL){
-        printf("\n");
-        return;  
+        return 0;  
     }
-    printf("%d\n", stack -> value); 
+    return stack -> value; 
 }
 
 int size(node *stack){

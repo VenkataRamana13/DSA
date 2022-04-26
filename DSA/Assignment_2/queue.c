@@ -29,12 +29,11 @@ node *enqueue(node *p, int i){
     return p; 
 }
 
-void front(node *p){
+int front(node *p){
     if (p == NULL){
-        printf("\n"); 
-        return; 
+        exit(0); 
     }
-    printf("%d\n", p -> value); 
+    return p -> value; 
 }
 
 int isEmpty(node *p){
