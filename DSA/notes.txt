@@ -1,1 +1,3 @@
 data structures -> contiguous or linked 
+hash tables -> index mapping, seperate chaining, open addressing. 
+
