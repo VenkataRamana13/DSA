@@ -48,3 +48,9 @@ void insert(node **p, int x){
     if(x < (*p) -> value) insert(&((*p)->left), x); 
     else insert(&((*p)->right), x); 
 }
+
+int sum(node *p){
+    if(p != NULL){
+        return p -> value + sum(p -> left) + sum(p -> right); }
+    else return 0; 
+}

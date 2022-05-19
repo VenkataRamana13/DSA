@@ -13,3 +13,5 @@ node *max(node *p);
 void traverse(node *p); 
 
 void insert(node **p, int x); 
+
+int sum(node *p); 
