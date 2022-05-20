@@ -15,3 +15,5 @@ void traverse(node *p);
 void insert(node **p, int x); 
 
 int sum(node *p); 
+
+int sum_search(node *, int); 

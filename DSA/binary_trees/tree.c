@@ -54,3 +54,10 @@ int sum(node *p){
         return p -> value + sum(p -> left) + sum(p -> right); }
     else return 0; 
 }
+
+int sum_search(node *p, int x){
+    if(p == NULL) return 0; 
+    if(p -> value == x) return x; 
+    if(x < p -> value) return p -> value + sum_search(p -> left, x); 
+    else return p -> value + sum_search(p -> right, x); 
+}

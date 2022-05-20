@@ -16,7 +16,9 @@ int main(){
             scanf("%d", &x); 
             insert(&p, x); 
         }
-        else break;
+        else { 
+            break;
+        }
     }
-    printf("sum is %d\n", sum(p)); 
+    printf("sum is %d\n", sum_search(p, x)); 
 }
