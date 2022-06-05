@@ -1,3 +1,6 @@
+#ifndef __TREE_H_
+#define __TREE_H_
+
 typedef struct node{
     int value; 
     struct node *left; 
@@ -17,3 +20,5 @@ void insert(node **p, int x);
 int sum(node *p); 
 
 int sum_search(node *, int); 
+
+#endif
