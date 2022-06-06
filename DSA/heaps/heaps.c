@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MinData -1
+
 heap *initialize(int maxElems){
     heap *H = malloc(sizeof(heap)); 
     if(H == NULL){
@@ -15,18 +17,19 @@ heap *initialize(int maxElems){
     } 
     H -> Capacity = maxElems; 
     H -> size = 0; 
-    H -> elements[0] = -1; 
+    H -> elements[0] = MinData; 
 
     return H; 
 }
 
 void insert(ElementType x, heap *H){
     int i; 
-    if(H -> size == H -> Capacity + 1){
+    if(H -> size == H -> Capacity){
         printf("priority queue is full\n"); 
         return; 
     }
-    for(i = ++H -> size; H -> elements[i / 2] > x; i /= 2){
+    ++H -> size; 
+    for(i = H -> size; H -> elements[i / 2] > x; i /= 2){
         H -> elements[i] = H -> elements[i / 2]; 
     }
     H -> elements[i] = x; 
@@ -35,12 +38,12 @@ void insert(ElementType x, heap *H){
 ElementType deleteMin(heap *H){
     int i, child; 
     ElementType min, last; 
-    if(!H -> size){
+    if(H -> size == 0){
         printf("priority queue is empty\n"); 
         return H -> elements[0]; 
     }
     min = H -> elements[1]; 
-    last = H -> elements[0]; 
+    last = H -> elements[H -> size--]; 
     for(i = 1; i * 2 <= H -> size; i = child){
         child = i * 2; 
         if(child != H -> size && H -> elements[child + 1] < H -> elements[child])
