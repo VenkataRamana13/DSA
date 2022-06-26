@@ -10,8 +10,8 @@ int main(){
 
     int n; cin >> n; 
     vector<pair<int, int>> p(n); 
-    for(auto &i : p){
-        cin >> i.first >> i.second;     //taking input
+    for(int i = 0; i < n; i++){
+        cin >> p[i].first >> p[i].second; 
     }
     bool t[n] = {false}; 
     for(auto i : p){
