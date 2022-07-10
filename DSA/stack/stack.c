@@ -3,13 +3,6 @@
 #include <stdlib.h>
 
 node *push(node *stack, int n){
-    if (stack == NULL){
-        stack = malloc(sizeof(node)); 
-        stack -> value = n; 
-        stack -> next = NULL; 
-        return stack; 
-    }
-
     node *p = malloc(sizeof(node)); 
     
     p -> value = n; 
@@ -18,11 +11,8 @@ node *push(node *stack, int n){
 }
 
 node *pop(node *stack){
-    if (stack == NULL){
+    if (stack == NULL || stack -> next == NULL){
         return NULL;  
-    }
-    if(stack -> next == NULL){
-        return NULL; 
     }
     node *tmp = stack -> next; 
     free(stack); 
